@@ -1,5 +1,5 @@
 #!/bin/bash
 
-python ~/Desktop/client.py &
-python ~/Desktop/manual_1.py &
+python client.py &
+python manual_1.py
 echo 'Scripts launched!'
