@@ -1,5 +1,6 @@
-name: ocw_car
-
+name: cardboardcar
+channels: 
+  - defaults
 dependencies:
   - python=2.7
   - opencv

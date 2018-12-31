@@ -56,7 +56,6 @@ class PiVideoStream(object):
 
     def __init__(self):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # self.server_socket.bind(('192.168.1.66', 8000)) # The IP address of your computer (Paul's MacBook Air). This script should run before the one on the Pi.
         self.server_socket.bind(('0.0.0.0', 8000)) # 0.0.0.0 means all interfaces
 
         print 'Listening...'

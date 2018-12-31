@@ -4,12 +4,10 @@ import struct
 import time
 import picamera
 
-
 # create socket and bind host
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('10.0.0.121', 8000)) # 10.0.0.121 is the IP for Paul's MacBook Air.
+client_socket.connect(('10.0.0.121', 8000)) # This should be the IP for your computer (not the Pi).
 connection = client_socket.makefile('wb')
-
 
 if __name__ == '__main__':
     
