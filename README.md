@@ -15,7 +15,7 @@ d.reverse(1)
 
 ## Drive car like an RC car while streaming live video
 
-1. Open up a terminal window and go to your local copy of this repo (`car_code`) on your computer. This will be the **"host"**.
+1. Open up a terminal window and go to your local copy of this repo (`car_code`) on your computer. This will be the **"server"**.
 
 2. Activate the `cardboardcar` environment. 
 ```
@@ -39,12 +39,12 @@ sudo nano client.py
 ```
 On line 9, make sure the IP address matches the IP address of your "sever" computer. You can find this by running `ifconfig` in the first terminal window ("server").
 
-5. In the "server" terminal window, run `server.py` and wait for the "Listening..." line to display:
+5. In the **"server"** terminal window, run `server.py` and wait for the "Listening..." line to display:
 ```
 python server.py
 ```
 
-6. In the "client" terminal window, run `launch.sh`:
+6. In the **"client"** terminal window, run `launch.sh`:
 ```
 bash launch.sh
 ```
