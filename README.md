@@ -8,13 +8,12 @@ Starter code to be used on the Cardboard Car. Clone this repo on the Pi.
 2. Activate the `cardboardcar` environment. 
 ```
 source activate cardboardcar
-```
-If you don't have this setup yet, you can create it using the `environment.yml` in this repo.
-(prerequisites: Anaconda or Miniconda and `conda-env`)
+``` If you don't have this setup yet, you can create it using the `environment.yml` in this repo.
+   (prerequisites: Anaconda or Miniconda and `conda-env`)
 ```
 conda env create --file environment.yml
 ```
-If this fails, just create a conda environment with the specs listed in `environment.yml` and activate it. This terminal window will be the "server".
+   If this fails, just create a conda environment with the specs listed in `environment.yml` and activate it. This terminal window will be the "server".
 
 3. Turn on your car and open up Terminal on there. The bash script in there will automatically display the Pi's IP address. Open up another terminal window on your laptop and `ssh` into your Pi. This terminal window (i.e. your Pi) will be the **"client"**.
 ```
