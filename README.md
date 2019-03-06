@@ -15,24 +15,31 @@ d.reverse(1)
 
 ## Drive car like an RC car while streaming live video
 
-1. Open up a terminal window and clone this repo on your computer. `cd` into it.
+1. Open up a terminal window and go to your local copy of this repo (`car_code`) on your computer. This ill be the "host".
 
-2. Create a conda environment using the `environment.yml`.
+2. Activate the `cardboardcar` environment. 
+```
+source activate cardboardcar
+```
+If you don't have this setup yet, you can create it using the `environment.yml` in this repo.
 (prerequisites: Anaconda or Miniconda and `conda-env`)
 ```
 conda env create --file environment.yml
 ```
 If this fails, just create a conda environment with the specs listed in `environment.yml` and activate it. This terminal window will be the "server".
 
-3. Open up another terminal window and ssh into your Pi. This will be the "client".
+3. Turn on your car and open up Terminal on there. The bash script in there will automatically display the Pi's IP address. Open up another terminal window on your laptop and `ssh` into your Pi. This terminal window (i.e. your Pi) will be the "client".
+```
+ssh pi@<IP address of your Pi>
+```
 
 4. Go to the `car_code` repo on your Pi and edit the `client.py` script:
 ```
 sudo nano client.py
 ```
-On line 9, make sure the IP address matches the IP address of your "sever" computer. You can find this by running `ifconfig` from the command line on your computer.
+On line 9, make sure the IP address matches the IP address of your "sever" computer. You can find this by running `ifconfig` in the first terminal window ("server").
 
-5. In the "server" terminal window, run the `server.py` and wait for the line "Listening..." to appear:
+5. In the "server" terminal window, run `server.py` and wait for the "Listening..." line to display:
 ```
 python server.py
 ```
