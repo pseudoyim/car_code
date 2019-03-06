@@ -3,7 +3,7 @@ Starter code to be used on the Cardboard Car. Clone this repo on the Pi.
 
 ## Drive car like an RC car while streaming live video
 
-1. Open up a terminal window and go to your local copy of this repo (`car_code`) on your computer. This will be the **"server"**.
+1. Open up a terminal window and go to your local copy of `car_code`. This will be the **"server"**.
 
 2. Activate the `stellacar` environment. 
 ```
@@ -14,30 +14,32 @@ If you don't have this setup yet, you can create it using the `environment.yml` 
 ```
 conda env create --file environment.yml
 ```
-If this fails, just create a conda environment with the specs listed in `environment.yml` and activate it. This terminal window will be the "server".
+If this fails, just create a conda environment with the specs listed in `environment.yml` and activate it.
 
-3. Turn on your car and open up Terminal on there. The bash script in there will automatically display the Pi's IP address. Open up another terminal window on your laptop and `ssh` into your Pi. This terminal window (i.e. your Pi) will be the **"client"**.
+3. Turn on your car and open up Terminal. The bash script in there will automatically display the Pi's IP address. Open up another terminal window on your laptop (Command + N) and `ssh` into your Pi. This terminal window will be the **"client"** (i.e. your Pi).
 ```
 ssh pi@<IP address of your Pi>
 ```
 
-4. Go to the `car_code` repo on your Pi and edit the `client.py` script:
+4. Turn on the battery pack that powers the car's motors.
+
+5. Go to the `car_code` repo on your Pi and edit the `client.py` script:
 ```
 sudo nano client.py
 ```
-On line 9, make sure the IP address matches the IP address of your "sever" computer. You can find this by running `ifconfig` in the first terminal window ("server").
+On line 9, make sure the IP address matches the IP address of your "sever" computer. You can find this by running `ifconfig` in the  **"server"** terminal.
 
-5. In the **"server"** terminal window, run `server.py` and wait for the "Listening..." line to display:
+6. In the **"server"** terminal, run `server.py` and wait for the "Listening..." line to display:
 ```
 python server.py
 ```
 
-6. In the **"client"** terminal window, run `launch.sh`:
+7. In the **"client"** terminal window, run `launch.sh`:
 ```
 bash launch.sh
 ```
 
-7. Wait a few seconds for the video feed to appear on your computer. You should now be able to drive the car using the arrow keys on your keyboard.
+8. Wait a few seconds for the video feed to appear on your computer. You should now be able to drive the car using the arrow keys on your keyboard.
 
 ## `car.py`
 `car.py` can be used as a library to drive the car (e.g. forward, left, right, reverse). Usage example:
