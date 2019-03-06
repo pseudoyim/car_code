@@ -1,18 +1,6 @@
 # car_code
 Starter code to be used on the Cardboard Car. Clone this repo on the Pi.
 
-`car.py` can be used as a library to drive the car (e.g. forward, left, right, reverse). Usage example:
-```
-from car import Drive
-
-d = Drive()
-
-d.forward(1) 	# Number in parentheses is seconds.
-d.left(1)
-d.right(1)
-d.reverse(1)
-```
-
 ## Drive car like an RC car while streaming live video
 
 1. Open up a terminal window and go to your local copy of this repo (`car_code`) on your computer. This will be the **"server"**.
@@ -51,6 +39,18 @@ bash launch.sh
 
 7. Wait a few seconds for the video feed to appear on your computer. You should now be able to drive the car using the arrow keys on your keyboard.
 
+## `car.py`
+`car.py` can be used as a library to drive the car (e.g. forward, left, right, reverse). Usage example:
+```
+from car import Drive
+
+d = Drive()
+
+d.forward(1) 	# Number in parentheses is seconds.
+d.left(1)
+d.right(1)
+d.reverse(1)
+```
 
 ## Bash script to echo Pi's IP address 
 It's convenient to have the Pi's LCD screen display its current IP address when you need to ssh into it.
