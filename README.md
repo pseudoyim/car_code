@@ -70,7 +70,7 @@ sudo nano .ip_show.sh
 3. Add these lines (the IP address should be in the first couple lines in the wlan0 section):
 ```
 echo 'IP address of this Pi:'
-ipconfig wlan0 | head -n 2
+ifconfig wlan0 | head -n 2
 ```
 Save and exit (cmd+O, enter, cmd+X).
 
