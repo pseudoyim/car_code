@@ -53,7 +53,7 @@ def manual_driver(stdscr):
             print 'Quitting! Smell you later!'
             break
 
-curses.wrapper(drive)
+curses.wrapper(manual_driver)
 
 
 if __name__ == '__main__':
