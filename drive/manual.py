@@ -34,7 +34,7 @@ def forward():
     # print 'Forward'
     duty = _degrees_to_duty(90)   # 90 degrees (straight ahead)
     s.ChangeDutyCycle(duty)
-    d.ChangeDutyCycle(30)
+    d.ChangeDutyCycle(1)
     time.sleep(seconds)
     d.ChangeDutyCycle(0)
 
@@ -42,7 +42,7 @@ def reverse():
     # print 'Reverse'
     duty = _degrees_to_duty(90)   # 90 degrees (straight ahead)
     s.ChangeDutyCycle(duty)
-    d.ChangeDutyCycle(1)
+    d.ChangeDutyCycle(10)
     time.sleep(seconds)
     d.ChangeDutyCycle(0)
 
@@ -50,7 +50,7 @@ def right():
     # print 'right'
     duty = _degrees_to_duty(65.0)   # 67.5 degrees is midpt b/n 45 and 90)
     s.ChangeDutyCycle(duty)
-    d.ChangeDutyCycle(30)
+    d.ChangeDutyCycle(1)
     time.sleep(seconds)
     d.ChangeDutyCycle(0)
 
@@ -58,7 +58,7 @@ def left():
     # print 'left'
     duty = _degrees_to_duty(115.0)    # 112.5 degrees is midpt b/n 90 and 135)
     s.ChangeDutyCycle(duty)
-    d.ChangeDutyCycle(30)
+    d.ChangeDutyCycle(1)
     time.sleep(seconds)
     d.ChangeDutyCycle(0)
 
