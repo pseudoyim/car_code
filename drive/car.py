@@ -33,7 +33,7 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(30)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)                  # Return to straight ahead
+        # self.s.ChangeDutyCycle(90)                  # Return to straight ahead
         self.d.ChangeDutyCycle(0)
 
 
@@ -43,7 +43,7 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(1)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)                  # Return to straight ahead
+        # self.s.ChangeDutyCycle(90)                  # Return to straight ahead
         self.d.ChangeDutyCycle(0)
 
 
@@ -53,7 +53,7 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(30)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)                  # Return to straight ahead
+        # self.s.ChangeDutyCycle(90)                  # Return to straight ahead
         self.d.ChangeDutyCycle(0)
 
 
@@ -63,5 +63,5 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(30)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)                  # Return to straight ahead
+        # self.s.ChangeDutyCycle(90)                  # Return to straight ahead
         self.d.ChangeDutyCycle(0)
