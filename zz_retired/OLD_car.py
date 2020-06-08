@@ -2,12 +2,13 @@ import RPi.GPIO as GPIO
 import time
 
 
-class Drive:
+class Drive(object):
 
 	def __init__(self):
 		self.steer_pin = 12
 		self.drive_pin = 13
 		self.degree_correction = 0
+		self.delay_seconds = 0.03
 
 		GPIO.setwarnings(False)					# Do not show any warnings
 		GPIO.setmode (GPIO.BCM)					# Programming the GPIO by BCM pin numbers
@@ -26,42 +27,42 @@ class Drive:
 		return duty
 
 
-	def forward(self, seconds=1):
-		print 'Forward: {} seconds'.format(seconds)
+	def forward(self):
+		print 'Forward: {} seconds'.format(self.delay_seconds)
 		self.duty = self._degrees_to_duty(90)		# 90 degrees (straight ahead)
 		self.s.ChangeDutyCycle(self.duty)
 		self.d.ChangeDutyCycle(30)
-		time.sleep(seconds)
+		time.sleep(self.delay_seconds)
 		self.s.ChangeDutyCycle(90)
 		self.d.ChangeDutyCycle(0)
 
 
-	def reverse(self, seconds=1):
-		print 'Reverse: {} seconds'.format(seconds)
+	def reverse(self):
+		print 'Reverse: {} seconds'.format(self.delay_seconds)
 		self.duty = self._degrees_to_duty(90)		# 90 degrees (straight ahead)
 		self.s.ChangeDutyCycle(self.duty)
 		self.d.ChangeDutyCycle(1)
-		time.sleep(seconds)
+		time.sleep(self.delay_seconds)
 		self.s.ChangeDutyCycle(90)
 		self.d.ChangeDutyCycle(0)
 
 
-	def left(self, seconds=1):
-		print 'Left: {} seconds'.format(seconds)
+	def left(self):
+		print 'Left: {} seconds'.format(self.delay_seconds)
 		self.duty = self._degrees_to_duty(65.0)		# 67.5 degrees is midpt b/n 45 and 90)
 		self.s.ChangeDutyCycle(self.duty)
 		self.d.ChangeDutyCycle(30)
-		time.sleep(seconds)
+		time.sleep(self.delay_seconds)
 		self.s.ChangeDutyCycle(90)
 		self.d.ChangeDutyCycle(0)
 
 
-	def right(self, seconds=1):
-		print 'Right: {} seconds'.format(seconds)
+	def right(self):
+		print 'Right: {} seconds'.format(self.delay_seconds)
 		self.duty = self._degrees_to_duty(115.0)		# 112.5 degrees is midpt b/n 90 and 135)
 		self.s.ChangeDutyCycle(self.duty)
 		self.d.ChangeDutyCycle(30)
-		time.sleep(seconds)
+		time.sleep(self.delay_seconds)
 		self.s.ChangeDutyCycle(90)
 		self.d.ChangeDutyCycle(0)
 

@@ -1,11 +1,10 @@
 import curses
-from curses import wrapper
 import datetime
 import RPi.GPIO as GPIO
-import os
-import socket
-import threading
 import time
+# import os
+# import socket
+# import threading
 # from picamera import PiCamera
 
 
@@ -13,6 +12,7 @@ import time
 steer_pin = 12
 drive_pin = 13
 degree_correction = 0
+
 GPIO.setwarnings(False)         # Do not show any warnings
 GPIO.setmode (GPIO.BCM)         # Programming the GPIO by BCM pin numbers
 GPIO.setup(steer_pin ,GPIO.OUT) # Initialize pin for steering servo (front)
@@ -108,7 +108,7 @@ def driver(stdscr):
             print 'Quitting! Smell you later!'
             break
 
-wrapper(driver)
+curses.wrapper(driver)
 
 if __name__ == '__main__':
     # stdscr = curses.initscr()

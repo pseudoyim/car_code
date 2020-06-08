@@ -1,4 +1,4 @@
-åimport RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 servopin = 12

@@ -1,7 +1,8 @@
-name: cardboardcar
+name: cardboard
 channels: 
-  - defaults
+  - rpi
+  - bkreider
 dependencies:
   - python=2.7
   - opencv
-  - numpy
+  - rpi.gpio
