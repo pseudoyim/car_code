@@ -33,7 +33,7 @@ def _degrees_to_duty(degrees):
 
 def forward():
     # print 'Forward'
-    duty = _degrees_to_duty(90)   # 90 degrees (straight ahead)
+    duty = _degrees_to_duty(90)    # 90 degrees (straight ahead)
     s.ChangeDutyCycle(duty)
     d.ChangeDutyCycle(FORWARD_DUTY)
     time.sleep(seconds)
@@ -41,7 +41,7 @@ def forward():
 
 def reverse():
     # print 'Reverse'
-    duty = _degrees_to_duty(90)   # 90 degrees (straight ahead)
+    duty = _degrees_to_duty(90)    # 90 degrees (straight ahead)
     s.ChangeDutyCycle(duty)
     d.ChangeDutyCycle(REVERSE_DUTY)
     time.sleep(seconds)
@@ -49,7 +49,7 @@ def reverse():
 
 def right():
     # print 'right'
-    duty = _degrees_to_duty(65.0)   # 67.5 degrees is midpt b/n 45 and 90)
+    duty = _degrees_to_duty(65.0)    # 67.5 degrees is midpoint b/n 45 and 90)
     s.ChangeDutyCycle(duty)
     d.ChangeDutyCycle(FORWARD_DUTY)
     time.sleep(seconds)
@@ -57,7 +57,7 @@ def right():
 
 def left():
     # print 'left'
-    duty = _degrees_to_duty(115.0)    # 112.5 degrees is midpt b/n 90 and 135)
+    duty = _degrees_to_duty(115.0)    # 112.5 degrees is midpoint b/n 90 and 135)
     s.ChangeDutyCycle(duty)
     d.ChangeDutyCycle(FORWARD_DUTY)
     time.sleep(seconds)
@@ -71,6 +71,8 @@ def driver(stdscr):
     driving = True
     
     while driving:
+
+        print 'Press Q to quit.\n\n'
 
         # Store the key value in the variable 'key'
         stdscr = curses.initscr()
@@ -106,6 +108,7 @@ def driver(stdscr):
         # QUIT
         elif key == ord('q'):
             driving = False
+            s.ChangeDutyCycle(90)    # 90 degrees (straight ahead)
             print 'Quitting! Smell you later!'
             break
 
