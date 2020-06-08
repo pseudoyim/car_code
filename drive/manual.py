@@ -76,8 +76,9 @@ def driver(stdscr):
         stdscr = curses.initscr()
         key = stdscr.getch()
         stdscr.clear()
-        print 'Press Q to quit.\n\n'
 
+        stdscr.addstr('Press Q anytime to quit.')
+        stdscr.addstr('\n')
         stdscr.addstr('Direction: ')
 
         # FORWARD
