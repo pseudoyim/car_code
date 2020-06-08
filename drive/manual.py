@@ -72,12 +72,11 @@ def driver(stdscr):
     
     while driving:
 
-        print 'Press Q to quit.\n\n'
-
         # Store the key value in the variable 'key'
         stdscr = curses.initscr()
         key = stdscr.getch()
         stdscr.clear()
+        print 'Press Q to quit.\n\n'
 
         stdscr.addstr('Direction: ')
 
@@ -107,9 +106,9 @@ def driver(stdscr):
 
         # QUIT
         elif key == ord('q'):
-            driving = False
             s.ChangeDutyCycle(90)    # 90 degrees (straight ahead)
             print 'Quitting! Smell you later!'
+            driving = False
             break
 
 curses.wrapper(driver)
