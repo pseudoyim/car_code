@@ -25,22 +25,22 @@ def manual_driver(stdscr):
 
         # FORWARD
         if key == curses.KEY_UP:
-            forward()
+            drive.forward()
             stdscr.addstr('Forward')
 
         # FORWARD_RIGHT
         elif key == curses.KEY_RIGHT:
-            right()
+            drive.right()
             stdscr.addstr('Forward-right')
 
         # FORWARD_LEFT
         elif key == curses.KEY_LEFT:
-            left()
+            drive.left()
             stdscr.addstr('Forward-left')
 
         # REVERSE
         elif key == curses.KEY_DOWN:
-            reverse()
+            drive.reverse()
             stdscr.addstr('Reverse')
 
         # TODO: REVERSE_RIGHT
