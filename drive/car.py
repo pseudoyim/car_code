@@ -33,7 +33,7 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(30)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)
+        # self.s.ChangeDutyCycle(90)
         self.d.ChangeDutyCycle(0)
 
 
@@ -43,25 +43,25 @@ class Drive(object):
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(1)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)
-        self.d.ChangeDutyCycle(0)
-
-
-    def left(self):
-        print 'Left: {} seconds'.format(self.delay_seconds)
-        self.duty = self._degrees_to_duty(65.0)     # 67.5 degrees is midpt b/n 45 and 90)
-        self.s.ChangeDutyCycle(self.duty)
-        self.d.ChangeDutyCycle(30)
-        time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)
+        # self.s.ChangeDutyCycle(90)
         self.d.ChangeDutyCycle(0)
 
 
     def right(self):
         print 'Right: {} seconds'.format(self.delay_seconds)
-        self.duty = self._degrees_to_duty(115.0)        # 112.5 degrees is midpt b/n 90 and 135)
+        self.duty = self._degrees_to_duty(65.0)     # 67.5 degrees is midpoint b/n 45 and 90)
         self.s.ChangeDutyCycle(self.duty)
         self.d.ChangeDutyCycle(30)
         time.sleep(self.delay_seconds)
-        self.s.ChangeDutyCycle(90)
+        # self.s.ChangeDutyCycle(90)
+        self.d.ChangeDutyCycle(0)
+
+
+    def left(self):
+        print 'Left: {} seconds'.format(self.delay_seconds)
+        self.duty = self._degrees_to_duty(115.0)        # 112.5 degrees is midpoint b/n 90 and 135)
+        self.s.ChangeDutyCycle(self.duty)
+        self.d.ChangeDutyCycle(30)
+        time.sleep(self.delay_seconds)
+        # self.s.ChangeDutyCycle(90)
         self.d.ChangeDutyCycle(0)
